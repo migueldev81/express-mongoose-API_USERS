@@ -10,8 +10,13 @@ const app = express();
 app.use(cors());
 
 //routes
-import items from './routes/item.routes';
-app.use(items);
+import api from './routes/api.routes';
+import views from './routes/views.routes';
+app.use(api);
+app.use(views);
 
 //start server
 app.listen(PORT, () => console.log('Server on port', PORT));
+
+//static files
+app.use(express.static(__dirname + '/public'));
