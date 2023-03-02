@@ -12,7 +12,11 @@ const app = (0, express_1.default)();
 //middlewares
 app.use((0, cors_1.default)());
 //routes
-const item_routes_1 = __importDefault(require("./routes/item.routes"));
-app.use(item_routes_1.default);
+const api_routes_1 = __importDefault(require("./routes/api.routes"));
+const views_routes_1 = __importDefault(require("./routes/views.routes"));
+app.use(api_routes_1.default);
+app.use(views_routes_1.default);
 //start server
 app.listen(PORT, () => console.log('Server on port', PORT));
+//static files
+app.use(express_1.default.static(__dirname + '/public'));
