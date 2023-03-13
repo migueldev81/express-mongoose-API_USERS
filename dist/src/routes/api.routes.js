@@ -18,4 +18,5 @@ router.put('/products:id', (req, res) => {
 router.delete('/products:id', (req, res) => {
     res.status(200).json({ message: 'delete product' });
 });
+//clients
 exports.default = router;
